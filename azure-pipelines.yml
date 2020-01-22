@@ -54,7 +54,7 @@ jobs:
       displayName: 'Use Python $(python.version)'
     - script: |
         echo %NUMBER_OF_PROCESSORS%
-        systeminfo | findstr /C:"Total Physical Memory"
+        systeminfo
         pip install -r requirements.txt
       displayName: 'Install dependencies'
     - script: |
