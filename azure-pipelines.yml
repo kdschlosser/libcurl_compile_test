@@ -26,6 +26,8 @@ jobs:
         versionSpec: '$(python.version)'
       displayName: 'Use Python $(python.version)'
     - script: |
+        nproc
+        free -m
         pip install -r requirements.txt
       displayName: 'Install dependencies'
     - script: |
@@ -51,6 +53,8 @@ jobs:
         versionSpec: '$(python.version)'
       displayName: 'Use Python $(python.version)'
     - script: |
+        echo %NUMBER_OF_PROCESSORS%
+        systeminfo | findstr /C:"Total Physical Memory"
         pip install -r requirements.txt
       displayName: 'Install dependencies'
     - script: |
@@ -76,6 +80,8 @@ jobs:
         versionSpec: '$(python.version)'
       displayName: 'Use Python $(python.version)'
     - script: |
+        system_profiler | grep "Cores"
+        system_profiler SPHardwareDataType | grep "  Memory:"
         pip install -r requirements.txt
       displayName: 'Install dependencies'
     - script: |
