@@ -55,6 +55,7 @@ jobs:
     - script: |
         echo %NUMBER_OF_PROCESSORS%
         wmic CPU get NAME
+        winsat disk -drive c
         pip install -r requirements.txt
       displayName: 'Install dependencies'
     - script: |
