@@ -26,7 +26,7 @@ jobs:
         versionSpec: '$(python.version)'
       displayName: 'Use Python $(python.version)'
     - script: |
-        apt-get install fio
+        sudo apt-get install fio
         sudo fio --runtime 30 fioreadwrite.ini
         nproc
         free -m
